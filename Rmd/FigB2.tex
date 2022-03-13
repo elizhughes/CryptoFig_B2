@@ -1,0 +1,711 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={EWGrantCryptoFigure},
+  pdfauthor={Liz Hughes and Laura Tuck},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{EWGrantCryptoFigure}
+\author{Liz Hughes and Laura Tuck}
+\date{13/03/2022}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{cryptococcus-part-b2-figure}{%
+\section{Cryptococcus Part B2
+Figure}\label{cryptococcus-part-b2-figure}}
+
+This code will produce a figure that demonstrates that we can
+successfully transform and do complementation in Cryptococcus, to argue
+that we should be able to do similar experiments with Ssd1. The Gat201
+complementation is the best evidence that we have for that. A short
+3-panel figure showing: A. Overview of CryptoMobius for gene
+complementation B. Simple evidence that we complemented a Gat201
+phenotype - I think if there are some clear growth curve or colony
+assays from @Liz Hughes? The one on the Jan seminar is nice but a bit
+complicated, too many replicate lines to be clear for a grant
+application. C. (maybe) One clear panel showing that we can express a
+fluorescent protein using CryptoMobius? Microscopy or flow or colonies
+on plates are fine.
+
+\hypertarget{load-packages}{%
+\section{Load packages}\label{load-packages}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(reshape2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'reshape2' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rlang)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'rlang' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v tibble  3.1.6     v purrr   0.3.4
+## v tidyr   1.2.0     v stringr 1.4.0
+## v readr   2.1.2     v forcats 0.5.1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tibble' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyr' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'readr' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x purrr::%@%()         masks rlang::%@%()
+## x purrr::as_function() masks rlang::as_function()
+## x dplyr::filter()      masks stats::filter()
+## x purrr::flatten()     masks rlang::flatten()
+## x purrr::flatten_chr() masks rlang::flatten_chr()
+## x purrr::flatten_dbl() masks rlang::flatten_dbl()
+## x purrr::flatten_int() masks rlang::flatten_int()
+## x purrr::flatten_lgl() masks rlang::flatten_lgl()
+## x purrr::flatten_raw() masks rlang::flatten_raw()
+## x purrr::invoke()      masks rlang::invoke()
+## x dplyr::lag()         masks stats::lag()
+## x purrr::splice()      masks rlang::splice()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(markdown)}
+\FunctionTok{library}\NormalTok{(cowplot)}
+\FunctionTok{library}\NormalTok{(viridis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: viridisLite
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(flowCore)}
+\FunctionTok{library}\NormalTok{(hrbrthemes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'hrbrthemes' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{verbatim}
+## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.
+\end{verbatim}
+
+\begin{verbatim}
+##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and
+\end{verbatim}
+
+\begin{verbatim}
+##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggridges)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggridges' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(extrafont)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registering fonts with R
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#if (!require("BiocManager", quietly = TRUE))}
+\CommentTok{\#    install.packages("BiocManager")}
+
+\CommentTok{\#BiocManager::install("flowCore")}
+\CommentTok{\# I should only need to run this once when reopening the script, don\textquotesingle{}t run each time!}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{panel-b}{%
+\section{Panel B}\label{panel-b}}
+
+\hypertarget{plate-reader-assay.}{%
+\section{Plate reader assay.}\label{plate-reader-assay.}}
+
+Set up to test growth of WT and Gat201 complemented strains in RPMI at
+37 degrees. 1 Biorep, 4 Techreps each: 3 WT Strains (H99, KN99-alpha and
+KN99a), Madhani Gat201 deletion mutant and Gat201-complemented strains
+23,26,30,32,36,44,46,50,51 and 53. Grow 5ml culture from colony (1
+colony = 1 Biorep)in YPD, 30C, 200 rpm ON. Seed at OD 600nm = 0.2; 200
+ul per well. Run for 500 cycles.
+
+Note: There was condensation on the lid of wells C8 (Gat201-M1.3), C9
+(Gat201-M1.4) and C10 (23 1.3) . D8 (36 1.1) and 9 (36 1.2). E9 (36
+1.4). These wells will be removed from the analysis. The plate was set
+up and running and by mistake the door was opened and plate removed
+after about an hour. I put the plate back in and started the run again.
+
+\#\#Read in transposed data as csv file
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rawdata1 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"../Input/20210608\_PR17\_TRSP.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#\#Change time in seconds to time in hours
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rawdata\_day}\OtherTok{\textless{}{-}}\FunctionTok{mutate}\NormalTok{(rawdata1, }\AttributeTok{Time =}\NormalTok{ Time}\SpecialCharTok{/}\DecValTok{86400}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{tidy-the-data-using-the-melt-function-from-reshape2}{%
+\subsection{Tidy the data using the melt function from
+reshape2}\label{tidy-the-data-using-the-melt-function-from-reshape2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reshaped }\OtherTok{\textless{}{-}} \FunctionTok{melt}\NormalTok{(rawdata\_day, }\AttributeTok{id=}\FunctionTok{c}\NormalTok{(}\StringTok{"Time"}\NormalTok{, }\StringTok{"Temp"}\NormalTok{), }\AttributeTok{variable.name=}\StringTok{"Well"}\NormalTok{,}
+                 \AttributeTok{value.name=}\StringTok{"OD595"}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(reshaped)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Time             Temp            Well           OD595       
+##  Min.   :0.0000   Min.   :36.50   A1     :  500   Min.   :0.1100  
+##  1st Qu.:0.7991   1st Qu.:36.90   A2     :  500   1st Qu.:0.1710  
+##  Median :1.5982   Median :37.00   A3     :  500   Median :0.2540  
+##  Mean   :1.5982   Mean   :36.97   A4     :  500   Mean   :0.2773  
+##  3rd Qu.:2.3973   3rd Qu.:37.00   A5     :  500   3rd Qu.:0.3380  
+##  Max.   :3.1964   Max.   :37.20   A6     :  500   Max.   :0.5960  
+##                                   (Other):45000
+\end{verbatim}
+
+\hypertarget{read-in-the-plate-map-data-from-csv-file}{%
+\subsection{Read in the Plate map data from csv
+file}\label{read-in-the-plate-map-data-from-csv-file}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{platemap }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"../Input/20210608\_PR17\_Setup.csv "}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{combine-the-reshaped-data-with-the-plate-map-pairing-them-by-well}{%
+\subsection{Combine the reshaped data with the plate map, pairing them
+by
+Well}\label{combine-the-reshaped-data-with-the-plate-map-pairing-them-by-well}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{annotated }\OtherTok{\textless{}{-}} \FunctionTok{inner\_join}\NormalTok{(reshaped, platemap, }\AttributeTok{by=}\StringTok{"Well"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+` Remove wells A1, A12, B1, C1, D1, E1, F1, F10, F11, G1 and H1 from the
+analysis.
+
+\hypertarget{calculate-median-od-for-blank-wells-to-use-to-normalise-data.}{%
+\section{Calculate median OD for blank wells to use to normalise
+data.}\label{calculate-median-od-for-blank-wells-to-use-to-normalise-data.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{blank\_OD\_summary }\OtherTok{\textless{}{-}}\NormalTok{ annotated }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Strain}\SpecialCharTok{==}\StringTok{""}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"A1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"A12"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"B1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"C1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"D1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"E1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"F1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"F10"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"F11"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"G1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{   dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Well}\SpecialCharTok{!=} \StringTok{"H1"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Medium) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{OD\_median=}\FunctionTok{median}\NormalTok{(OD595),}
+            \AttributeTok{OD\_mean=}\FunctionTok{mean}\NormalTok{(OD595),}
+            \AttributeTok{OD\_max=}\FunctionTok{max}\NormalTok{(OD595),}
+            \AttributeTok{OD\_min=}\FunctionTok{min}\NormalTok{(OD595))}
+
+\FunctionTok{print}\NormalTok{(blank\_OD\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 5
+##   Medium OD_median OD_mean OD_max OD_min
+##   <chr>      <dbl>   <dbl>  <dbl>  <dbl>
+## 1 RPMI       0.164   0.164  0.275   0.11
+\end{verbatim}
+
+\hypertarget{subtract-blank-od-to-make-corrected-od-and-plot-od_corrected-v-time-hrs}{%
+\subsection{Subtract blank OD to make corrected OD and Plot
+OD\_corrected v Time
+(hrs)}\label{subtract-blank-od-to-make-corrected-od-and-plot-od_corrected-v-time-hrs}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normalisedOD }\OtherTok{\textless{}{-}}\NormalTok{ annotated }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{left\_join}\NormalTok{(blank\_OD\_summary, }\AttributeTok{by=}\StringTok{"Medium"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{mutate}\NormalTok{(}\AttributeTok{OD\_corrected =}\NormalTok{ OD595 }\SpecialCharTok{{-}}\NormalTok{ OD\_median)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{re-order-the-legend-to-match-the-lines}{%
+\subsection{Re-order the legend to match the
+lines}\label{re-order-the-legend-to-match-the-lines}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normalisedOD}\SpecialCharTok{$}\NormalTok{Strain }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(normalisedOD}\SpecialCharTok{$}\NormalTok{Strain, }\AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Gat201 deletion"}\NormalTok{, }\StringTok{"Clone 2"}\NormalTok{, }\StringTok{"Clone 1"}\NormalTok{, }\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PRPlot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{normalisedOD }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{                 dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(Strain }\SpecialCharTok{!=} \StringTok{""}\NormalTok{),}
+                \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Time, }\AttributeTok{y=}\NormalTok{OD\_corrected, }\AttributeTok{colour =}\NormalTok{ Strain)) }\SpecialCharTok{+} 
+                \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =} \StringTok{"median"}\NormalTok{, }\AttributeTok{geom =} \StringTok{"line"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+                \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.45}\NormalTok{),}\AttributeTok{expand=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)) }\SpecialCharTok{+}
+        \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Number of Days"}\NormalTok{,}
+            \AttributeTok{y =} \StringTok{"Absorbance (595nm)"}\NormalTok{,}
+            \AttributeTok{title =} \StringTok{"Gat201 Complemented Strains"}\NormalTok{) }\SpecialCharTok{+}
+       
+       \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{20}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{,}\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =}\DecValTok{20}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{, }\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{20}\NormalTok{, }\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{( }\AttributeTok{hjust =}\DecValTok{1}\NormalTok{),}
+    \AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"solid"}\NormalTok{),}
+    \AttributeTok{panel.background =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{fill =} \StringTok{"white"}\NormalTok{), }
+    \AttributeTok{axis.ticks =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{),}
+    \AttributeTok{axis.ticks.length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.25}\NormalTok{, }\StringTok{"cm"}\NormalTok{),}
+    \AttributeTok{legend.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{16}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{),}
+    \AttributeTok{legend.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{16}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{))}
+    
+\NormalTok{PRPlot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FigB2_files/figure-latex/plot_all_stat_summary-1.pdf}
+
+\#Panel C
+
+\hypertarget{flow_cytometry_analysis_lt_160222}{%
+\section{Flow\_cytometry\_analysis\_LT\_160222}\label{flow_cytometry_analysis_lt_160222}}
+
+\hypertarget{define-functions-to-load-flow-cytometry-data-using-flowcore-package}{%
+\subsection{Define functions to load flow cytometry data, using FlowCore
+package}\label{define-functions-to-load-flow-cytometry-data-using-flowcore-package}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{repair\_flow\_colnames }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(string) \{}
+\NormalTok{  string }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{    stringr}\SpecialCharTok{::}\FunctionTok{str\_replace\_all}\NormalTok{(}\StringTok{" "}\NormalTok{, }\StringTok{""}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{    stringr}\SpecialCharTok{::}\FunctionTok{str\_replace\_all}\NormalTok{(}\StringTok{"PE{-}"}\NormalTok{, }\StringTok{"PE"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{    stringr}\SpecialCharTok{::}\FunctionTok{str\_replace\_all}\NormalTok{(}\StringTok{"{-}"}\NormalTok{, }\StringTok{"\_"}\NormalTok{)}
+\NormalTok{\}}
+
+\NormalTok{read\_fcs\_tibble }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(file,...) \{}
+  \FunctionTok{read.FCS}\NormalTok{(file,...) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{    .}\SpecialCharTok{@}\NormalTok{exprs }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{    as\_tibble }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{set\_names}\NormalTok{(}\FunctionTok{repair\_flow\_colnames}\NormalTok{(}\FunctionTok{names}\NormalTok{(.)))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datadir }\OtherTok{\textless{}{-}} \StringTok{"../Input/Flow\_cytometry\_data/"}
+\CommentTok{\#Will need to make a new sample sheet for each new set of strains/bioreps I do}
+\NormalTok{straindir }\OtherTok{\textless{}{-}} \StringTok{"../Input/Flow\_cytometry\_data/"}
+\CommentTok{\# Strain\_Order \textless{}{-}  c("KN99ON", "CnLT0004.1ON", "CnLT0004.2ON", "CnLT0004.3ON", "CnLT0007.1ON", "CnLT0007.2ON", "CnLT0007.3ON")}
+
+\NormalTok{samplesheet }\OtherTok{\textless{}{-}} \FunctionTok{paste}\NormalTok{(straindir, }\StringTok{"StrainsForFlowCytometry\_170222.xlsx"}\NormalTok{, }\AttributeTok{sep =} \StringTok{"/"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  readxl}\SpecialCharTok{::}\FunctionTok{read\_excel}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(Strain, SampleLabel, Replicate, Filename) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{SampleLabel =} \FunctionTok{factor}\NormalTok{(SampleLabel))}
+
+\NormalTok{samplesheet}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 28 x 4
+##    Strain          SampleLabel  Replicate Filename                 
+##    <chr>           <fct>        <chr>     <chr>                    
+##  1 WT              KN99a        a         Specimen_001_wt_a.fcs    
+##  2 WTB             KN99b        b         Specimen_001_wt_b.fcs    
+##  3 WTC             KN99c        c         Specimen_001_wt_c.fcs    
+##  4 WTON            KN99ON       ON        Specimen_o,2f,n_wt_a.fcs 
+##  5 BR1             CnLT0004.1a  a         Specimen_001_4_1_a.fcs   
+##  6 mCardinal_BR1B  CnLT0004.1b  b         Specimen_001_4_1_b.fcs   
+##  7 mCardinal_BR1C  CnLT0004.1c  c         Specimen_001_4_1_c.fcs   
+##  8 mCardinal_BR1ON CnLT0004.1ON ON        Specimen_o,2f,n_4_1_a.fcs
+##  9 BR2             CnLT0004.2a  a         Specimen_001_4_2_a.fcs   
+## 10 mCardinal_BR2B  CnLT0004.2b  b         Specimen_001_4_2_b.fcs   
+## # ... with 18 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#datadir \textless{}{-} "M:data/2022/02{-}Feb/Laura/Flow\_cytometry\_data/"}
+\CommentTok{\#Will need to make a new sample sheet for each new set of strains/bioreps I do}
+\CommentTok{\#straindir \textless{}{-} "M:data/2022/02{-}Feb/Laura/Flow\_cytometry\_data/"}
+\CommentTok{\# Strain\_Order \textless{}{-}  c("KN99ON", "CnLT0004.1ON", "CnLT0004.2ON", "CnLT0004.3ON", "CnLT0007.1ON", "CnLT0007.2ON", "CnLT0007.3ON")}
+
+\CommentTok{\#samplesheet \textless{}{-} paste(straindir, "StrainsForFlowCytometry\_170222.xlsx", sep = "/") \%\textgreater{}\%}
+ \CommentTok{\# readxl::read\_excel() \%\textgreater{}\%}
+  \CommentTok{\#select(Strain, SampleLabel, Replicate, Filename) \%\textgreater{}\%}
+\CommentTok{\#  mutate(SampleLabel = factor(SampleLabel))}
+
+\CommentTok{\#samplesheet}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Check the specific gates for the datasets, this is a rough estimate of where the gates lie}
+\NormalTok{flow\_data\_all }\OtherTok{\textless{}{-}}\NormalTok{ samplesheet }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Strain, SampleLabel, Replicate, Filename) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{do}\NormalTok{( }\FunctionTok{read\_fcs\_tibble}\NormalTok{(}\FunctionTok{paste}\NormalTok{(datadir, .}\SpecialCharTok{$}\NormalTok{Filename[}\DecValTok{1}\NormalTok{], }\AttributeTok{sep =} \StringTok{"/"}\NormalTok{)) )}
+
+\NormalTok{flow\_data\_gated\_singlets }\OtherTok{\textless{}{-}}\NormalTok{ flow\_data\_all }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(FSC\_W }\SpecialCharTok{\textgreater{}} \DecValTok{50000}\NormalTok{, FSC\_W }\SpecialCharTok{\textless{}} \DecValTok{90000}\NormalTok{, }
+\NormalTok{                FSC\_A }\SpecialCharTok{\textgreater{}} \DecValTok{80000}\NormalTok{, FSC\_A }\SpecialCharTok{\textless{}} \DecValTok{220000}\NormalTok{)}
+
+\NormalTok{flow\_data\_gated\_budding }\OtherTok{\textless{}{-}}\NormalTok{ flow\_data\_all }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(FSC\_W }\SpecialCharTok{\textgreater{}} \DecValTok{90000}\NormalTok{, FSC\_W }\SpecialCharTok{\textless{}} \DecValTok{150000}\NormalTok{, }
+\NormalTok{                FSC\_A }\SpecialCharTok{\textgreater{}} \DecValTok{60000}\NormalTok{, FSC\_A }\SpecialCharTok{\textless{}} \DecValTok{250000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flow\_data\_all}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2,409,092 x 45
+## # Groups:   Strain, SampleLabel, Replicate, Filename [28]
+##    Strain SampleLabel Replicate Filename  FSC_A FSC_H  FSC_W  SSC_A SSC_H  SSC_W
+##    <chr>  <fct>       <chr>     <chr>     <dbl> <dbl>  <dbl>  <dbl> <dbl>  <dbl>
+##  1 71A    CnLT0007.1a a         Specime~ 92480. 66012 91813. 52016. 36433 93566.
+##  2 71A    CnLT0007.1a a         Specime~ 87542. 77731 73808. 36058. 35910 65806.
+##  3 71A    CnLT0007.1a a         Specime~ 71209. 65835 70885. 36120. 36492 64868.
+##  4 71A    CnLT0007.1a a         Specime~ 74763  67247 72861. 38708. 37102 68373.
+##  5 71A    CnLT0007.1a a         Specime~ 54894. 51237 70213. 20246. 20642 64279.
+##  6 71A    CnLT0007.1a a         Specime~ 57674. 54400 69480. 17904. 18437 63643.
+##  7 71A    CnLT0007.1a a         Specime~ 76235. 69042 72364. 29847. 30423 64295.
+##  8 71A    CnLT0007.1a a         Specime~ 43348. 41139 69055. 19558. 20850 61474.
+##  9 71A    CnLT0007.1a a         Specime~ 86578. 69213 81978. 33527. 28810 76267.
+## 10 71A    CnLT0007.1a a         Specime~ 83557. 67351 81305. 51492. 44214 76324.
+## # ... with 2,409,082 more rows, and 35 more variables: AlexaFluor647_A <dbl>,
+## #   AlexaFluor647_H <dbl>, AlexaFluor700_A <dbl>, AlexaFluor700_H <dbl>,
+## #   APC_Cy7_A <dbl>, APC_Cy7_H <dbl>, PEA <dbl>, PEH <dbl>, PETexasRed_A <dbl>,
+## #   PETexasRed_H <dbl>, PETexasRed_W <dbl>, PECy5_A <dbl>, PECy5_H <dbl>,
+## #   PECy5_W <dbl>, PECy5_5_A <dbl>, PECy5_5_H <dbl>, PECy7_A <dbl>,
+## #   PECy7_H <dbl>, AlexaFluor488_A <dbl>, AlexaFluor488_H <dbl>, PerCP_A <dbl>,
+## #   PerCP_H <dbl>, AlexaFluor405_A <dbl>, AlexaFluor405_H <dbl>, ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{left\_join}\NormalTok{(flow\_data\_all }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{group\_by}\NormalTok{(Strain) }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{tally}\NormalTok{(),}
+\NormalTok{          flow\_data\_gated\_singlets }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{group\_by}\NormalTok{(Strain) }\SpecialCharTok{\%\textgreater{}\%}
+            \FunctionTok{tally}\NormalTok{(),}
+          \AttributeTok{by =} \StringTok{"Strain"}\NormalTok{,}
+          \AttributeTok{suffix =} \FunctionTok{c}\NormalTok{(}\StringTok{"\_all"}\NormalTok{, }\StringTok{"\_gated\_singlets"}\NormalTok{) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 28 x 3
+##    Strain  n_all n_gated_singlets
+##    <chr>   <int>            <int>
+##  1 71A     31766             7377
+##  2 71B     28052             6045
+##  3 71C     30385             7052
+##  4 71ON   292005            92852
+##  5 72A     29741             5781
+##  6 72B     28295             5783
+##  7 72C     29337             5696
+##  8 72ON   294525           122158
+##  9 73A     34875            16416
+## 10 73B     37485            16593
+## # ... with 18 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{5}\NormalTok{)}
+
+\NormalTok{Strains\_ON }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"KN99ON"}\NormalTok{, }\StringTok{"CnLT0004.1ON"}\NormalTok{, }\StringTok{"CnLT0004.2ON"}\NormalTok{, }\StringTok{"CnLT0004.3ON"}\NormalTok{, }\StringTok{"CnLT0007.1ON"}\NormalTok{, }\StringTok{"CnLT0007.2ON"}\NormalTok{, }\StringTok{"CnLT0007.3ON"}\NormalTok{)}
+\NormalTok{Strains\_A }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"WT"}\NormalTok{, }\StringTok{"BR1"}\NormalTok{, }\StringTok{"BR2"}\NormalTok{, }\StringTok{"BR3"}\NormalTok{)}
+\NormalTok{Strains\_B }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"KN99b"}\NormalTok{, }\StringTok{"CnLT0004.1b"}\NormalTok{, }\StringTok{"CnLT0004.2b"}\NormalTok{, }\StringTok{"CnLT0004.3b"}\NormalTok{, }\StringTok{"CnLT0007.1b"}\NormalTok{, }\StringTok{"CnLT0007.2b"}\NormalTok{, }\StringTok{"CnLT0007.3b"}\NormalTok{)}
+\NormalTok{Strains\_C }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"KN99c"}\NormalTok{, }\StringTok{"CnLT0004.1c"}\NormalTok{, }\StringTok{"CnLT0004.2c"}\NormalTok{, }\StringTok{"CnLT0004.3c"}\NormalTok{, }\StringTok{"CnLT0007.1c"}\NormalTok{, }\StringTok{"CnLT0007.2c"}\NormalTok{, }\StringTok{"CnLT0007.3c"}\NormalTok{)}
+\CommentTok{\# flow\_data\_gated\_singlets \textless{}{-} mutate(flow\_data\_gated\_singlets, SampleLabel = factor(SampleLabel, Strain\_Order))}
+
+
+\NormalTok{mCardinal\_Plot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(flow\_data\_gated\_singlets, Strain }\SpecialCharTok{\%in\%}\NormalTok{ Strains\_A), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ PECy5\_A)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =}\NormalTok{ Strain, }\AttributeTok{lty =}\NormalTok{ Strain, }\AttributeTok{fill =}\NormalTok{ Strain), }\AttributeTok{lwd =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkred"}\NormalTok{, }\StringTok{"darkred"}\NormalTok{, }\StringTok{"darkred"}\NormalTok{,}\StringTok{"cyan4"}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkred"}\NormalTok{, }\StringTok{"darkred"}\NormalTok{, }\StringTok{"darkred"}\NormalTok{,}\StringTok{"cyan4"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_linetype\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"solid"}\NormalTok{, }\StringTok{"dashed"}\NormalTok{, }\StringTok{"dotted"}\NormalTok{, }\StringTok{"solid"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_log10}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{200000}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}mCardinal Fluorescence vs Cell Density\textquotesingle{}}\NormalTok{, }\AttributeTok{x =} \StringTok{"PECy5\_A"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Cell density"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{20}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{,}\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =}\DecValTok{20}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{,}\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{20}\NormalTok{,}\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{45}\NormalTok{, }\AttributeTok{hjust =}\DecValTok{1}\NormalTok{,}\AttributeTok{family =} \StringTok{"sans"}\NormalTok{),}
+    \AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"solid"}\NormalTok{),}
+    \AttributeTok{panel.background =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{fill =} \StringTok{"white"}\NormalTok{), }
+    \AttributeTok{axis.ticks =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{),}
+    \AttributeTok{axis.ticks.length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.25}\NormalTok{, }\StringTok{"cm"}\NormalTok{),}
+    \AttributeTok{legend.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{16}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{, }\AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{),}
+    \AttributeTok{legend.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{16}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{))}
+
+\NormalTok{ mCardinal\_Plot}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in self$trans$transform(x): NaNs produced
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Transformation introduced infinite values in continuous x-axis
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 6382 rows containing non-finite values (stat_density).
+\end{verbatim}
+
+\includegraphics{FigB2_files/figure-latex/plot to show mcardinal fluorescence v cell density using BiorepA cells-1.pdf}
+
+\hypertarget{draft-multipanel-figure}{%
+\section{Draft Multipanel Figure}\label{draft-multipanel-figure}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{figure\_left\_column }\OtherTok{\textless{}{-}} 
+    \FunctionTok{plot\_grid}\NormalTok{(}
+\NormalTok{    PRPlot }\SpecialCharTok{+}
+      \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.margin =} \FunctionTok{unit}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\FloatTok{0.75}\NormalTok{),}\StringTok{"in"}\NormalTok{)),}
+\NormalTok{    mCardinal\_Plot,}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.margin =} \FunctionTok{unit}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}\StringTok{"in"}\NormalTok{)),}
+       \AttributeTok{ncol =} \DecValTok{1}\NormalTok{,}
+    \AttributeTok{rel\_heights =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+    \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"B"}\NormalTok{,}\StringTok{"C"}\NormalTok{)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in self$trans$transform(x): NaNs produced
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Transformation introduced infinite values in continuous x-axis
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 6382 rows containing non-finite values (stat_density).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in as_grob.default(plot): Cannot convert object of class themegg into a
+## grob.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot\_grid}\NormalTok{(}
+\NormalTok{  figure\_left\_column,}
+  \AttributeTok{ncol =} \DecValTok{1}\NormalTok{,}
+  \AttributeTok{rel\_widths =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FigB2_files/figure-latex/figure_CryptoMob-1.pdf}
+
+\end{document}
