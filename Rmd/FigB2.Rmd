@@ -319,7 +319,7 @@ plot_grid(
 ```
 
 
-# Save Multipanel Figure .jpeg and .svg
+# Save Multipanel Figure .jpeg, .svg and .Pdf
 
 ```{r save_jpeg}
 ggsave("../Output/figure_B2 .jpeg", 
@@ -331,7 +331,10 @@ ggsave("../Output/figure_B2 .svg",
 figure_B2  ,width = 7,height=10)
 ```
 
-
+```{r save_pdf}
+ggsave("../Output/figure_B2 .pdf", 
+figure_B2  ,width = 7,height=10)
+```
 
 
 
