@@ -94,7 +94,7 @@ summary(reshaped)
 ## Read in the Plate map data from csv file
 
 ```{r Load_platemap}
-platemap <- read.csv("../Input/20210608_PR17_Setup.csv ")
+platemap <- read.csv("../Input/20210608_PR17_Setup.csv")
 
 ```
 
