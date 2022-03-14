@@ -41,6 +41,7 @@ library(flowCore)
 library(hrbrthemes)
 library(ggridges)
 library(extrafont)
+library(svglite)
 
 ```
 
@@ -54,7 +55,7 @@ library(extrafont)
 ```
 # Panel B
 
-# Plate reader assay.
+## Plate reader assay.
 
 Set up to test growth of WT and Gat201 complemented strains in RPMI at 37 degrees.
 1 Biorep, 4 Techreps each: 3 WT Strains (H99, KN99-alpha and KN99a), Madhani Gat201 deletion mutant and Gat201-complemented strains 23,26,30,32,36,44,46,50,51 and 53.
@@ -68,14 +69,14 @@ These wells will be removed from the analysis.
 The plate was set up and running and by mistake the door was opened and plate removed after about an hour. I put the plate back in and started the run again.
 
 
-##Read in transposed data as csv file
+## Read in transposed data as csv file
 
 ```{r csv_file}
 rawdata1 <- read.csv("../Input/20210608_PR17_TRSP.csv")
 
 ```
 
-##Change time in seconds to time in hours
+## Change time in seconds to time in hours
 
 ```{r mutate_time}
 rawdata_day<-mutate(rawdata1, Time = Time/86400)
@@ -107,26 +108,26 @@ annotated <- inner_join(reshaped, platemap, by="Well")
 
 
 `
-Remove wells A1, A12, B1, C1, D1, E1, F1, F10, F11, G1 and H1 from the analysis.
 
-# Calculate median OD for blank wells to use to normalise data.
 
+## Calculate median OD for blank wells to use to normalise data.
+Remove wells A1, A12, B1, C1, C8, C9, C10, D1, D8, D9, E1, E9, F1, F10, F11, G1 and H1 from the analysis.
 
 ```{r calc_blank_medians}
 
 blank_OD_summary <- annotated %>%
-   dplyr::filter(Strain=="") %>%
-   dplyr::filter(Well!= "A1")%>%
-   dplyr::filter(Well!= "A12")%>%
-   dplyr::filter(Well!= "B1")%>%
-   dplyr::filter(Well!= "C1")%>%
-   dplyr::filter(Well!= "D1")%>%
-   dplyr::filter(Well!= "E1")%>%
-   dplyr::filter(Well!= "F1")%>%
-   dplyr::filter(Well!= "F10")%>%
-   dplyr::filter(Well!= "F11")%>%
-   dplyr::filter(Well!= "G1")%>%
-   dplyr::filter(Well!= "H1")%>%
+       dplyr::filter(Strain=="") %>%
+       dplyr::filter(Well!= "A1")%>%
+       dplyr::filter(Well!= "A12")%>%
+       dplyr::filter(Well!= "B1")%>%
+       dplyr::filter(Well!= "C1")%>%
+       dplyr::filter(Well!= "D1")%>%
+       dplyr::filter(Well!= "E1")%>%
+       dplyr::filter(Well!= "F1")%>%
+       dplyr::filter(Well!= "F10")%>%
+       dplyr::filter(Well!= "F11")%>%
+       dplyr::filter(Well!= "G1")%>%
+       dplyr::filter(Well!= "H1")%>%
   group_by(Medium) %>%
   summarise(OD_median=median(OD595),
             OD_mean=mean(OD595),
@@ -142,11 +143,18 @@ print(blank_OD_summary)
 ```{r NormOD}
 normalisedOD <- annotated %>%
             left_join(blank_OD_summary, by="Medium") %>%
-            mutate(OD_corrected = OD595 - OD_median)
+            mutate(OD_corrected = OD595 - OD_median) %>%
+                dplyr::filter(Well!= "C8")%>%
+                dplyr::filter(Well!= "C9")%>%
+                dplyr::filter(Well!= "C10")%>%
+                dplyr::filter(Well!= "D89")%>%
+                dplyr::filter(Well!= "D9")%>%
+                dplyr::filter(Well!= "E9")
+
 ```
 
 
-## Re-order the legend to match the lines
+## Re-order the legend to match the order of the lines on the plot
 
 ```{r reorder_legend}
 
@@ -154,40 +162,31 @@ normalisedOD$Strain <- factor(normalisedOD$Strain, levels = c("Gat201 deletion",
 
 ```
 
+## Plot
+
 
 ```{r plot_all_stat_summary}
 
 PRPlot <- ggplot(data=normalisedOD %>%
-                 dplyr::filter(Strain != ""),
+                dplyr::filter(Strain != ""),
                 aes(x=Time, y=OD_corrected, colour = Strain)) + 
                 stat_summary(fun = "median", geom = "line", size = 1) +
                 scale_y_continuous(limits=c(0,0.45),expand=c(0,0)) +
         labs(x = "Number of Days",
-            y = "Absorbance (595nm)",
-            title = "Gat201 Complemented Strains") +
-       
-       theme(
-    plot.title = element_text(size = 20, face = "bold", hjust = 0.5,family = "sans"),
-    axis.title = element_text(size =15, face = "bold", colour = "black", family = "sans"),
-    axis.text = element_text(size = 20, family = "sans"),
-    axis.text.x = element_text( hjust =1),
-    axis.line = element_line(colour = "black", size = 1, linetype = "solid"),
-    panel.background = element_rect(fill = "white"), 
-    axis.ticks = element_line(colour = "black", size = 1),
-    axis.ticks.length = unit(0.25, "cm"),
-    legend.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    legend.text = element_text(size = 14, face = "bold"))
+             y = "Absorbance (595nm)",
+             title = "Gat201 Complemented Clones 1 + 2") +
+        theme_classic()
     
 PRPlot
 
 
 ```
 
-#Panel C
+# Panel C
 
-# Flow_cytometry_analysis_LT_160222
+## Flow_cytometry_analysis_LT_160222
 
-## Define functions to load flow cytometry data, using FlowCore package
+### Define functions to load flow cytometry data, using FlowCore package
 
 ```{r functions_load}
 repair_flow_colnames <- function(string) {
@@ -206,6 +205,8 @@ read_fcs_tibble <- function(file,...) {
 
 ```
 
+
+
 ```{r test_readFCS, eval = FALSE, include = FALSE}
 # This is just a test read of one of the .fcs files, need to run the datadir chunk first though!
 flowf <- read.FCS("../Input/Flow_cytometry_data/Specimen_001_wt_a.fcs", sep = "/")
@@ -215,8 +216,7 @@ flowf
 flowf@parameters@data
 ```
 
-
-
+## Load samplesheet
 
 ```{r load_samplesheet}
 datadir <- "../Input/Flow_cytometry_data/"
@@ -232,20 +232,7 @@ samplesheet <- paste(straindir, "StrainsForFlowCytometry_170222.xlsx", sep = "/"
 samplesheet
 ```
 
-```{r load_samplesheetb}
-#datadir <- "M:data/2022/02-Feb/Laura/Flow_cytometry_data/"
-#Will need to make a new sample sheet for each new set of strains/bioreps I do
-#straindir <- "M:data/2022/02-Feb/Laura/Flow_cytometry_data/"
-# Strain_Order <-  c("KN99ON", "CnLT0004.1ON", "CnLT0004.2ON", "CnLT0004.3ON", "CnLT0007.1ON", "CnLT0007.2ON", "CnLT0007.3ON")
-
-#samplesheet <- paste(straindir, "StrainsForFlowCytometry_170222.xlsx", sep = "/") %>%
- # readxl::read_excel() %>%
-  #select(Strain, SampleLabel, Replicate, Filename) %>%
-#  mutate(SampleLabel = factor(SampleLabel))
-
-#samplesheet
-```
-
+## Load Data
 
 ```{r load_all_data}
 #Check the specific gates for the datasets, this is a rough estimate of where the gates lie
@@ -262,6 +249,8 @@ flow_data_gated_budding <- flow_data_all %>%
                 FSC_A > 60000, FSC_A < 250000)
 ```
 
+## Inspect Flow Data
+
 ```{r inspect_flow_data}
 flow_data_all
 
@@ -277,6 +266,7 @@ left_join(flow_data_all %>%
 
 ```
 
+## Plot
 
 ```{r plot to show mcardinal fluorescence v cell density using BiorepA cells}
 
@@ -296,17 +286,7 @@ mCardinal_Plot <- ggplot(data = dplyr::filter(flow_data_gated_singlets, Strain %
   scale_linetype_manual(values = c("solid", "dashed", "dotted", "solid")) +
   scale_x_log10(limits = c(100, 200000)) +
   labs(title = 'mCardinal Fluorescence vs Cell Density', x = "PECy5_A", y = "Cell density") +
-  theme(
-    plot.title = element_text(size = 20, face = "bold", hjust = 0.5,family = "sans"),
-    axis.title = element_text(size =15, face = "bold", colour = "black",family = "sans"),
-    axis.text = element_text(size = 20,family = "sans"),
-    axis.text.x = element_text( hjust =0.5, family = "sans"),
-    axis.line = element_line(colour = "black", size = 1, linetype = "solid"),
-    panel.background = element_rect(fill = "white"), 
-    axis.ticks = element_line(colour = "black", size = 1),
-    axis.ticks.length = unit(0.25, "cm"),
-    legend.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    legend.text = element_text(size = 14, face = "bold"))
+  theme_classic()
 
  mCardinal_Plot
 
@@ -317,22 +297,20 @@ mCardinal_Plot <- ggplot(data = dplyr::filter(flow_data_gated_singlets, Strain %
 
 ```{r figure_CryptoMob, fig.width = 7, fig.height = 10}
 
-figure_left_column <- 
+figure_B2  <-     
     plot_grid(
     PRPlot +
-      theme(plot.margin = unit(c(0.1,0,0.5,0.75),"in")),
+      theme(plot.margin = unit(c(0.1,0,0.5,0.1),"in")),
     mCardinal_Plot,
-    theme(plot.margin = unit(c(0.5,0,0,1),"in")),
+    theme(plot.margin = unit(c(1,0,0,1),"in")),
        ncol = 1,
     rel_heights = c(1,1),
     labels = c("B","C")
   )
-  
-
 
 
 plot_grid(
-  figure_left_column,
+  figure_B2 ,
   ncol = 1,
   rel_widths = c(2))
 
@@ -341,14 +319,17 @@ plot_grid(
 ```
 
 
-# Save Multipanel Figure
+# Save Multipanel Figure .jpeg and .svg
 
-```{r save}
-ggsave("../Output/figure_left_column .jpeg", 
-figure_left_column ,width = 7,height=10)
+```{r save_jpeg}
+ggsave("../Output/figure_B2 .jpeg", 
+figure_B2  ,width = 7,height=10)
 ```
 
-
+```{r save_svg}
+ggsave("../Output/figure_B2 .svg", 
+figure_B2  ,width = 7,height=10)
+```
 
 
 
